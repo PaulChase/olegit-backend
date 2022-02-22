@@ -21,7 +21,7 @@ Route::get('/', function () {
 Route::get('run-migration', function () {
 
     try {
-        Artisan::call('migrate');
+        Artisan::call('migrate:fresh');
         return ' successfully ran the migration';
     } catch (Exception $e) {
         return $e->getMessage();
